@@ -12,7 +12,9 @@
     '  you could also do other actions like change directions or add points etc.
     Public Function Collision(p1 As PictureBox, p2 As PictureBox) As Boolean
         Debug.Print(p1.Name + " ran into " + p2.Name)
-
+        If p2.Name = "cheesepicturebox" Then
+            Label2.Visible = True
+        End If
         'Any pictureboxes whose name start with TARGET that get run into will be removed
         If p2.Name.ToUpper.StartsWith("TARGET") Then 'remove targets when they are hit
             Remove(p2)
@@ -53,15 +55,15 @@
                 moveto(Player, Speed, 0)
             Case Keys.Space
                 'Add a bullet in the direction the player is facing
-                AddAt(BulletPictureBox2, Player.Location, direction)
+                AddAt(bulletcat, Player.Location, direction)
         End Select
     End Sub
 
     'You can make items appear using a time
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        '   AddAt(BulletPictureBox2, New Point(0, 0), "CHASE")
+        AddAt(bulletcat, New Point(0, 0), "CHASE")
         'AddAt(BulletPictureBox2, New Point(10, 5), "FOLLOW")
-        AddAt(BulletPictureBox2, New Point(5, 15), "RANDOM")
+        'AddAt(BulletPictureBox2, New Point(5, 15), "RANDOM")
     End Sub
 
 
@@ -69,5 +71,6 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         UpdateGame()
     End Sub
+
 
 End Class
