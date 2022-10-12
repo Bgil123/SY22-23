@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿Public Class Form1
     Const Speed As Integer = 10
     Dim direction As Point
@@ -76,6 +77,8 @@
 
 End Class
 =======
+=======
+>>>>>>> main
 ﻿Imports System.Runtime.CompilerServices
 
 Public Class Form1
